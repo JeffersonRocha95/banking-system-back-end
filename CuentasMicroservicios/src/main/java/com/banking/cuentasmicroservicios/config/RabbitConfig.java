@@ -1,4 +1,4 @@
 package com.banking.cuentasmicroservicios.config;
 
-public class RestTemplateConfig {
+public class RabbitConfig {
 }
