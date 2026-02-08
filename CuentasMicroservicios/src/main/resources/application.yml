@@ -1,0 +1,24 @@
+spring:
+  application:
+    name: clientes-microservicios
+
+  datasource:
+    url: jdbc:mysql://localhost:3306/pr_cuenta?useSSL=false&serverTimezone=UTC
+    username: root
+    password: MySql123*
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+
+  sql:
+    init:
+      mode: never
+
+server:
+  port: 8082
