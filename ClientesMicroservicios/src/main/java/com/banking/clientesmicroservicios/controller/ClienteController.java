@@ -2,6 +2,7 @@ package com.banking.clientesmicroservicios.controller;
 
 import com.banking.clientesmicroservicios.dto.ClienteDto;
 import com.banking.clientesmicroservicios.service.interfaces.IClienteService;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import java.util.List;
@@ -17,7 +18,7 @@ public class ClienteController  {
     @PostMapping
     public ResponseEntity<ClienteDto> CrearCliente(@RequestBody ClienteDto dto) {
         ClienteDto creado = clienteService.CrearCliente(dto);
-        return ResponseEntity.ok(creado);
+        return ResponseEntity.status(HttpStatus.CREATED).body(creado);
     }
 
     @GetMapping

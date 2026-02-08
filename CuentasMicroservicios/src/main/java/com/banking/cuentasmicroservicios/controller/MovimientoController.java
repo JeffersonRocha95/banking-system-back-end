@@ -2,6 +2,7 @@ package com.banking.cuentasmicroservicios.controller;
 
 import com.banking.cuentasmicroservicios.dto.MovimientoDto;
 import com.banking.cuentasmicroservicios.service.interfaces.IMovimientoService;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import java.util.List;
@@ -22,7 +23,7 @@ public class MovimientoController {
     ) {
         MovimientoDto registrado =
                 movimientoService.RegistrarMovimiento(movimientoDto);
-        return ResponseEntity.ok(registrado);
+        return ResponseEntity.status(HttpStatus.CREATED).body(registrado);
     }
 
     @GetMapping("/cuenta/{cuentaId}")

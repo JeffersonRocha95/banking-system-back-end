@@ -2,6 +2,7 @@ package com.banking.cuentasmicroservicios.controller;
 
 import com.banking.cuentasmicroservicios.dto.CuentaDto;
 import com.banking.cuentasmicroservicios.service.interfaces.ICuentaService;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import java.util.List;
@@ -19,7 +20,7 @@ public class CuentaController {
     @PostMapping
     public ResponseEntity<CuentaDto> CrearCuenta(@RequestBody CuentaDto dto) {
         CuentaDto creada = cuentaService.CrearCuenta(dto);
-        return ResponseEntity.ok(creada);
+        return ResponseEntity.status(HttpStatus.CREATED).body(creada);
     }
 
     @GetMapping("/{id}")

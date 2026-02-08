@@ -1,4 +1,4 @@
-package com.banking.clientesmicroservicios.domain;
+package com.banking.clientesmicroservicios;
 
 import static org.junit.jupiter.api.Assertions.*;
 
