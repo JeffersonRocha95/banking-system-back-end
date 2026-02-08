@@ -1,0 +1,15 @@
+spring:
+  datasource:
+    url: ${CLIENTES_DB_URL}
+    username: ${CLIENTES_DB_USER}
+    password: ${CLIENTES_DB_PASSWORD}
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    show-sql: false
+
+  sql:
+    init:
+      mode: never
